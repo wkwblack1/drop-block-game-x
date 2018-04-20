@@ -77,7 +77,7 @@ public:
 
     }
     void anticlock() {
-        //if (boardsize == 6) {
+        
         for (int x = 0; x * 2 < boardsize; x++)
         {
             for (int y = x; y < boardsize - x - 1; y++)
@@ -91,16 +91,10 @@ public:
             }
         }
     }
-    void clock() {
-        anticlock();
-        anticlock();
-        anticlock();
-    }
     void dropblocks(int a, char c, char d, int& dp1, int& dp2) {
         int t = 0;
         board board;
         dp1 = 0, dp2 = 0;
-        //if (boardsize == 6) {
         for (int i = 0; i < boardsize; i++) {
             temp[0][a] = c;
             temp[0][a + 1] = d;
@@ -324,12 +318,8 @@ void StartGame()
                     cout << "Invaild Input!\n";
                     continue;
                 }
-            } else if (i[counter] == 'r') {
-                board.clock();
-                system("cls");
-                board.printArray();
-                break;
-            } else if (i[counter] == 'R') {
+            } 
+            else if (i[counter] == 'R' || i[counter] == 'r') {
                 board.anticlock();
                 system("cls");
                 board.printArray();
